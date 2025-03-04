@@ -1,0 +1,1000 @@
+  215  kubectl get nodes
+  216  kubectl label node talos-265-e1d node-role.kubernetes.io/worker=worker
+  217  kubectl label node talos-265-e1d node-role.kubernetes.io/worker=worker1
+  218  kubectl label node talos-blv-ecm node-role.kubernetes.io/worker=worker
+  219  kubectl get nodes
+  220  vim helmfile.yaml 
+  221  helmfile apply
+  222  kubectl get pods -n metallb-system
+  223  kubectl get pods -n longhorn-system
+  224  kubectl describe pod longhorn-driver-deployer-b8bc4675f-xtxr8 -n longhorn-system
+  225  kubectl logs longhorn-driver-deployer-b8bc4675f-xtxr8 -n longhorn-system
+  226  kubectl get pods -n longhorn-system
+  227  kubectl logs longhorn-driver-deployer-b8bc4675f-xtxr8 -n longhorn-system
+  228  kubectl get pods -n metallb-system
+  229  kubectl describe pod metallb-controller-8474b54bc4-f5g94 -n metallb-system
+  230  kubectl get daemonset -n metallb-system
+  231  kubectl get pods -n longhorn-system | grep longhorn-manager
+  232  kubectl get pods -n longhorn-system
+  233  vim helmfile.yaml 
+  234  kubectl get pods -n longhorn-system
+  235  helm version
+  236  vim helmfile.yaml 
+  237  helm repo update
+  238  kubectl -n longhorn-system get pod
+  239  helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace --version 1.8.0
+  240  kubectl delete pod longhorn-driver-deployer-b8bc4675f-xtxr8 -n longhorn-system --force --grace-period=0
+  241  kubectl delete pod longhorn-ui-7749bb466f-kbxjz -n longhorn-system --force --grace-period=0
+  242  kubectl delete pod longhorn-ui-7749bb466f-ndbrw -n longhorn-system --force --grace-period=0
+  243  kubectl -n longhorn-system get pod
+  244  kubectl patch pod longhorn-driver-deployer-b8bc4675f-xtxr8 -n longhorn-system -p '{"metadata":{"finalizers":null}}'
+  245  kubectl delete pod longhorn-driver-deployer-b8bc4675f-xtxr8 -n longhorn-system
+  246  kubectl -n longhorn-system get pod
+  247  helm uninstall longhorn -n longhorn-system
+  248  kubectl -n longhorn-system get pod
+  249  kubectl delete namespace longhorn-system
+  250  kubectl -n longhorn-system get pod
+  251  kubectl get nodes
+  252  kubectl get pods
+  253  kubectl get pods -A
+  254  helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace --version 1.8.0
+  255  kubectl -n longhorn-system get pod
+  256  helm uninstall longhorn -n longhorn-system
+  257  kubectl delete namespace longhorn-system
+  258  kubectl get pods -A
+  259  kubectl delete namespace metallb-system
+  260  kubectl get pods -A
+  261  helmfile apply
+  262  kubectl get pods -A
+  263  kubectl describe pod longhorn-driver-deployer-b8bc4675f-fgflk -n longhorn-system
+  264  kubectl get svc -n longhorn-system
+  265  kubectl get pods -n longhorn-system | grep longhorn-manager
+  266  kubectl rollout restart deployment longhorn-manager -n longhorn-system
+  267  helm upgrade --install longhorn longhorn/longhorn -n longhorn-system
+  268  kubectl get ns longhorn-system --show-labels
+  269  kubectl label --overwrite ns longhorn-system   pod-security.kubernetes.io/enforce=privileged   pod-security.kubernetes.io/audit=privileged   pod-security.kubernetes.io/warn=privileged
+  270  kubectl get ns longhorn-system --show-labels
+  271  helm upgrade --install longhorn longhorn/longhorn -n longhorn-system
+  272  kubectl get pods -n longhorn-system
+  273  kubectl delete pod -n longhorn-system --all
+  274  talosctl reboot --nodes 192.168.5.10,192.168.5.11,192.168.5.12
+  275  talosctl reboot --nodes 192.168.5.10,192.168.5.11,192.168.5.12 -e 192.168.5.10 talosconfig=../talosconfig
+  276  talosctl reboot --nodes 192.168.5.10,192.168.5.11,192.168.5.12 -e 192.168.5.10 talosconfig=./talosconfig
+  277  talosctl reboot --nodes 192.168.5.10,192.168.5.11,192.168.5.12 -e 192.168.5.10 --talosconfig=./talosconfig
+  278  talosctl reboot --nodes 192.168.5.10,192.168.5.11,192.168.5.12 -e 192.168.5.10 --talosconfig=../talosconfig
+  279  helm upgrade --install longhorn longhorn/longhorn -n longhorn-system
+  280  kubectl get pods -n longhorn-system
+  281  kubectl get pods -n metallb-system
+  282  kubectl delete pod -n metallb-system --all
+  283  helmfile apply
+  284  kubectl get pods -n metallb-system
+  285  kubectl get daemonset -n metallb-system
+  286  kubectl rollout restart daemonset metallb-speaker -n metallb-system
+  287  kubectl get pods -n metallb-system
+  288  kubectl get ns metallb-system --show-labels
+  289  kubectl label --overwrite ns metallb-system   pod-security.kubernetes.io/enforce=privileged   pod-security.kubernetes.io/audit=privileged   pod-security.kubernetes.io/warn=privileged
+  290  kubectl get ns metallb-system --show-labels
+  291  kubectl rollout restart daemonset metallb-speaker -n metallb-system
+  292  kubectl get pods -n metallb-system
+  293  talosctl get admissioncontrolconfigs.kubernetes.talos.dev admission-control -o yaml
+  294  talosctl get admissioncontrolconfigs.kubernetes.talos.dev admission-control -o yaml --talosconfig=../talosconfig -e 192.168.5.10 -n 192.168.5.10
+  295  kubectl get pods -n longhorn-system
+  296  vim helmfile.yaml 
+  297  helm version
+  298  vim helmfile.yaml 
+  299  mkdir values
+  300  vim helmfile.yaml 
+  301  cd values/
+  302  vim pihole.values.yaml
+  303  cd..
+  304  cd ..
+  305  vim helmfile.yaml 
+  306  helmfile apply
+  307  vim helmfile.yaml 
+  308  helmfile apply
+  309  ls
+  310  cd values/
+  311  ls
+  312  vim pihole.values.yaml 
+  313  cd ..
+  314  helmfile apply
+  315  kubectl get pods -A
+  316  helmfile apply
+  317  vim helmfile.yaml 
+  318  find . .vimrc
+  319  vim ~/.vimrc
+  320  vim helmfile.yaml 
+  321  helmfile apply
+  322  kubectl get pods -n pihole-system
+  323  kubectl get pvc -n pihole-system
+  324  kubectl get svc -n pihole-system
+  325  mkdir ../kustomize
+  326  cd ../kustomize/
+  327  vim kustomization.yaml
+  328  cd ..
+  329  cd helm/
+  330  cd helmfile.yaml 
+  331  ls
+  332  cd values/
+  333  ls
+  334  vim pihole.values.yaml 
+  335  cd ../..
+  336  ls
+  337  cd helm/
+  338  cat talosconfig 
+  339  cd ..
+  340  cat talosconfig 
+  341  ls
+  342  cd kustomize/
+  343  ls
+  344  vim kustomization.yaml
+  345  ls
+  346  mkdir metallb
+  347  cd metallb/
+  348  vim pool.yaml
+  349  kubectl apply -k .
+  350  cd ..
+  351  kubectl apply -k .
+  352  ls
+  353  cd metallb/
+  354  vim pool.yaml 
+  355  cd ..
+  356  kubectl apply -k .
+  357  ls
+  358  vim kustomization.yaml 
+  359  ls
+  360  cd metallb/
+  361  ls
+  362  vim pool.yaml 
+  363  cd ..
+  364  kubectl apply -k .
+  365  kubectl get svc -n pihole-system
+  366  ls
+  367  vim kustomization.yaml 
+  368  kubectl apply -k .
+  369  kubectl get svc -n pihole-system
+  370  kubectl apply -k .
+  371  kubectl get svc -n pihole-system
+  372  kubectl get svc -n pihole-system\
+  373  kubectl get svc -n pihole-system
+  374  ls
+  375  cd metallb/pool.yaml 
+  376  cd metallb/
+  377  vim pool.yaml 
+  378  cd 
+  379  cd /home/phongcluster/
+  380  ls
+  381  cd kustomize/
+  382  ls
+  383  vim kustomization.yaml 
+  384  cd ..
+  385  cd helm/
+  386  ls
+  387  vim helmfile.yaml 
+  388  cd va
+  389  ls
+  390  cd values/
+  391  ls
+  392  vim pihole.values.yaml 
+  393  cd ..
+  394  ls
+  395  cd kustomize/
+  396  cd ..
+  397  kubectl apply -k kustomize/
+  398  kubectl get svc -n pihole-system
+  399  kubectl apply -k kustomize
+  400  kubectl get svc -n pihole-system
+  401  ls
+  402  cd kustomize/
+  403  k get po -n metallb-sytem
+  404  kubectl get po -n metallb-sytem
+  405  cd ..
+  406  kubectl get po -n metallb-sytem
+  407  kubectl get po -n metallb-system
+  408  cd kustomize/
+  409  kubectl get po -n metallb-system
+  410  cd ..
+  411  cd helm/
+  412  cd values/
+  413  vim pihole.values.yaml 
+  414  cd ..
+  415  helmfile apply
+  416  kubectl get svc -n pihole-system
+  417  cd values/
+  418  ls
+  419  vim pihole.values.yaml 
+  420  cd ..
+  421  helmfile apply
+  422  cd values/
+  423  vim pihole.values.yaml 
+  424  cd ..
+  425  helmfile apply
+  426  kubectl get svc -n pihole-system
+  427  kubectl get po -n metallb-system
+  428  ls
+  429  cd ..
+  430  cd helm/
+  431  ls
+  432  rm talosconfig 
+  433  ls
+  434  cd ..
+  435  ls
+  436  cd helm/
+  437  ls
+  438  cd values/
+  439  ls
+  440  cd ..
+  441  ls
+  442  vim helmfile.yaml 
+  443  cd ..
+  444  cd helm/
+  445  cd values/
+  446  cat pihole.values.yaml 
+  447  cd ..
+  448  kubectl get po -n pihole-system
+  449  kubctl get pvc -n pihole-system
+  450  kubectl get pvc -n pihole-system
+  451  kubectl get svc -n pihole-system
+  452  cd ..
+  453  ls
+  454  cd kustomize/
+  455  ls
+  456  vim kustomization.yaml 
+  457  cd metallb/
+  458  ls
+  459  cd ..
+  460  ls
+  461  cd helm/
+  462  ls
+  463  cat helmfile.yaml 
+  464  cd ..
+  465  ls
+  466  cd helm/
+  467  cd values/
+  468  ls
+  469  cat pihole.values.yaml 
+  470  cd ..
+  471  ls
+  472  cat helmfile.yaml 
+  473  cd ..
+  474  ls
+  475  cd kustomize/
+  476  ls
+  477  cd metallb/
+  478  cat pool.yaml 
+  479  kubectl get svc -n pihole-system
+  480  cd ..
+  481  kubectl -n pihole-system get secret pihole-password -o yaml
+  482  wl-paste | base64 -d
+  483  apt install wl-clipboard
+  484  wl-paste | base64 -d
+  485  ls
+  486  cd helm/
+  487  ls
+  488  cd va
+  489  cd values/
+  490  ls
+  491  vim pihole.values.yaml 
+  492  nslookup
+  493  cd ..cdcdcdls
+  494  ls
+  495  cd
+  496  ls
+  497  pwd
+  498  ls -ll
+  499  cd ..
+  500  ls
+  501  cd /home
+  502  ls
+  503  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  504  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+  505  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+  506  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  507  kubectl version --client
+  508  curl -sL https://talos.dev/install | sh
+  509  ping 192.168.5.227
+  510  $ talosctl gen config phongcluster https://192.168.5.10:6443
+  511  mkdir phongcluster
+  512  ls
+  513  cd phongcluster
+  514  curl -sL https://talos.dev/install | sh
+  515  talosctl gen config phongcluster https://192.168.5.10:6443
+  516  talosctl -n 192.168.5.10 get disk --insecure
+  517  vim controlplane.yaml
+  518  talosctl apply-config --insecure -n 192.168.5.10 --file controlplan.yaml
+  519  talosctl apply-config --insecure -n 192.168.5.10 --file controlplane.yaml
+  520  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 version
+  521  ls
+  522  vim worker.yaml
+  523  talosctl -n 192.168.5.11 get disk --insecure
+  524  vim worker.yaml
+  525  vim controlplane.yaml
+  526  vim worker.yaml
+  527  talosctl apply-config --insecure -n 192.168.5.11 --file worker.yaml
+  528  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.11 version
+  529  vim worker.yaml
+  530  talosctl config endpoint 192.168.5.10
+  531  talosctl config endpoint 192.168.5.11
+  532  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.11 version
+  533  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 version
+  534  talosctl config endpoint 192.168.5.10
+  535  talosctl config node 192.168.5.11
+  536  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 version
+  537  talosctl --talosconfig=./talosconfig --nodes 192.168.5.11 -e 192.168.5.10 version
+  538  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 dashboard
+  539  talosctl apply-config --insecure -n 192.168.5.12 --file worker.yaml
+  540  talosctl config node 192.168.5.12
+  541  talosctl bootstrap --nodes 192.168.5.10 --endpoints 192.168.5.10 --talosconfig=./talosconfig
+  542  talosctl kubeconfig
+  543  talosctl kubeconfig -n 192.168.5.10 -e 192.168.5.10 --talosconfig=./talosconfig 
+  544  kubectl get nodes
+  545  talosctl config node 192.168.5.12
+  546  kubectl get nodes
+  547  kubectl get pods
+  548  kubectl get pods -n kube-system --kubeconfig=kubeconfig
+  549  kube get pod
+  550  kubectl get nodes
+  551  kubectl get pod
+  552  kubectl get pods
+  553  ls
+  554  talosctl kubeconfig
+  555  talosctl kubeconfig -n 192.168.5.10 -e 192.168.5.10 --talosconfig=./talosconfig 
+  556  kubectl
+  557  kubectl get pods
+  558  kubectl get pods -n phongcluster
+  559  ls
+  560  cd ..
+  561  ls
+  562  cd ..
+  563  ls
+  564  cd /home/phongcluster
+  565  talosctl kubeconfig . -n 192.168.5.10 -e 192.168.5.10 --talosconfig=./talosconfig 
+  566  ls
+  567  kubectl get pods
+  568  kubectl get pods -n phongcluster
+  569  ls
+  570  kubectl get nodes
+  571  kubectl get pods
+  572  kubectl get pods -n kube-system --kubeconfig=kubeconfig
+  573  clear
+  574  kubectl get pods -n kube-system --kubeconfig=kubeconfig
+  575  history
+  576  clear
+  577  kubectl get po
+  578  kubectl get pods -n kube-system --kubeconfig=kubeconfig
+  579  ls
+  580  mkdir helm
+  581  cd helm/
+  582  vim helmfile.yaml
+  583  ls
+  584  helm search repo longhorn
+  585  choco version
+  586  curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+  587  sudo apt-get install apt-transport-https --yes
+  588  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+  589  sudo apt-get update
+  590  sudo apt-get install helm
+  591  helm help
+  592  clear
+  593  ls
+  594  vim helmfile.yaml
+  595  ls
+  596  helm repo add longhorn https://charts.longhorn.io
+  597  ls
+  598  helm search repo longhorn
+  599  vim helmfile.yaml
+  600  kubectl apply -f helmfile.yaml 
+  601  helmfile
+  602  pacman
+  603  apt install pacman'
+  604  apt install pacman
+  605  pacman
+  606  pacman help
+  607  pacman --help
+  608  pacman -h
+  609  clear
+  610  sudo pacman -h
+  611  sudo apt update && sudo apt upgrade -y
+  612  sudo apt install build-essential curl file git -y
+  613  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  614  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+  615  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  616  brew --version
+  617  sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  618  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  619  /bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  620  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -- --force
+  621  mkdir -p /opt/homebrew
+  622  cd /opt/homebrew/
+  623  git clone https://github.com/Homebrew/brew.git .
+  624  echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.bashrc
+  625  echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.profile
+  626  source ~/.bashrc
+  627  brew --version
+  628  cd /home/phongcluster/helm/
+  629  brew install helmfile
+  630  su -phongcluster
+  631  su - phongcluster
+  632  net user
+  633  adduser phong
+  634  su phong
+  635  kube get nodes
+  636  su toor
+  637  su
+  638  cd /home/phongcluster
+  639  talosctl -n 192.168.5.11 -e 192.168.5.10 dashboard --talosconfig=./talosconfig
+  640  cd /home
+  641  cd phongcluster
+  642  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 dashboard
+  643  talosctl --talosconfig=./talosconfig --nodes 192.168.5.11 -e 192.168.5.10 dashboard
+  644  talosctl --talosconfig=./talosconfig --nodes 192.168.5.12 -e 192.168.5.10 dashboard
+  645  ping 192.168.5.12
+  646  talosctl --talosconfig=./talosconfig --nodes 192.168.5.12 -e 192.168.5.10 dashboard
+  647  cat /etc/passwd
+  648  passwd
+  649  passwd phong
+  650  dig google.com @192.168.5.250
+  651  dig google.com
+  652  cd /home/phongcluster/
+  653  ls
+  654  history
+  655  s
+  656  ls
+  657  cd kustomize/
+  658  cd ..
+  659  cd kube
+  660  vim controlplane.yaml 
+  661  talosctl --nodes 192.168.5.10 --endpoints 192.168.5.10 dashboard  --talosconfig=./talosconfig
+  662  cd /home/phongcluster/
+  663  talosctl --nodes 192.168.5.10 --endpoints 192.168.5.10 dashboard  --talosconfig=./talosconfig
+  664  talosctl service ext-iscsid --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  665  talosctl service ext-iscsid --nodes 192.168.5.11 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  666  talosctl service ext-iscsid --nodes 192.168.5.12 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  667  talosctl get machineconfig --nodes 192.168.5.10 --talosconfig=./talosconfig | grep iscsi
+  668  talosctl --nodes 192.168.5.10 --endpoints 192.168.5.10 logs ext-iscsid  --talosconfig=./talosconfig
+  669  talosctl get extensions --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  670  talosctl get extensions --nodes 192.168.5.11 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  671  talosctl get extensions --nodes 192.168.5.12 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  672  talosctl reboot --nodes 192.168.5.11,192.168.5.12 -e 192.168.5.10 --talosconfig=./talosconfig
+  673  talosctl get extensions --nodes 192.168.5.12 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  674  talosctl get extensions --nodes 192.168.5.11 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  675  talosctl get extensions --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  676  talosctl get extensions 000.ghcr.io-siderolabs-iscsi-tools-v0.2.0 --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig -o yaml
+  677  talosctl version --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  678  talosctl version --nodes 192.168.5.11 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  679  talosctl version --nodes 192.168.5.12 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  680  talosctl get extensions 000.ghcr.io-siderolabs-iscsi-tools-v0.2.0 --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig -o yaml
+  681  talosctl get extensions --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  682  talosctl get extensions --nodes 192.168.5.11 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  683  talosctl get extensions --nodes 192.168.5.12 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  684  talosctl dashboard --nodes 192.168.5.10 --endpoints 192.168.5.10  --talosconfig=./talosconfig
+  685  cd /home/phongcluster/
+  686  kubectl get nodes.longhorn.io -n longhorn-system
+  687  kubectl patch nodes.longhorn.io/talos-ybj-a8b -n longhorn-system --type='merge' -p '{"spec":{"allowScheduling":true}}'
+  688  kubectl patch volumes.longhorn.io/pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -n longhorn-system --type='merge' -p '{"spec":{"numberOfReplicas": 3}}'
+  689  kubectl get nodes -o json | jq '.items[].spec.taints'
+  690  kubectl get nodes -l node.longhorn.io/create-default-disk=true
+  691  ls
+  692  cd helm/
+  693  ls
+  694  vim helmfile.yaml 
+  695  kubectl get nodes --show-labels
+  696  kubectl get nodes talos-ybj-a8b --show-labels | grep longhorn
+  697  kubectl get nodes talos-blv-ecm --show-labels | grep longhorn
+  698  kubectl get longhornnodes -n longhorn-system
+  699  kubectl describe node talos-ybj-a8b | grep Taints
+  700  kubectl logs -n longhorn-system -l app=longhorn-manager
+  701  kubectl get volumes.longhorn.io -n longhorn-system
+  702  kubectl get longhornvolumes -n longhorn-system
+  703  kubectl get crds | grep longhorn
+  704  kubectl get volumes.longhorn.io -n longhorn-system
+  705  kubectl api-resources | grep longhorn
+  706  kubectl get pods -n longhorn-system
+  707  kubectl get volumes.longhorn.io -n longhorn-system
+  708  kubectl logs -n longhorn-system -l app=longhorn-manager
+  709  kubectl logs -n longhorn-system -l app=longhorn-csi-plugin
+  710  kubectl get longhornnodes -n longhorn-system
+  711  kubectl get nodes.longhorn.io -n longhorn-system
+  712  kubectl get disks.longhorn.io -n longhorn-system
+  713  kubectl get disk.longhorn.io -n longhorn-system
+  714  helm uninstall longhorn -n longhorn-system
+  715  helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace
+  716  kubectl get pods -a
+  717  kubectl get pods -A
+  718  kubectl delete pod -l app=csi-attacher -n longhorn-system
+  719  kubectl delete pod -l app=csi-provisioner -n longhorn-system
+  720  kubectl delete pod -l app=csi-resizer -n longhorn-system
+  721  kubectl delete pod -l app=csi-snapshotter -n longhorn-system
+  722  kubectl get pods -A
+  723  kubectl rollout restart deployment longhorn-manager -n longhorn-system
+  724  helm uninstall longhorn -n longhorn-system
+  725  kubectl delete job longhorn-uninstall -n longhorn-system --ignore-not-found=true.
+  726  kubectl delete all --all -n longhorn-system
+  727  kubectl delete ns longhorn-system
+  728  kubectl get pods -A
+  729  helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace
+  730  kubectl delete ns longhorn-system
+  731  ls
+  732  kubectl get pod -A
+  733  helmfile apply
+  734  kubectl get pod -A
+  735  helmfile apply
+  736  kubectl get pod -A
+  737  ls
+  738  vim helmfile.yaml 
+  739  kubectl get pod -A
+  740  helm repo add longhorn https://charts.longhorn.io
+  741  helm repo update
+  742  helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace --version 1.8.0
+  743  kubectl get ns longhorn-system
+  744  kubectl delete ns longhorn-system --force --grace-period=0
+  745  kubectl get namespace longhorn-system -o json | jq '.spec.finalizers'
+  746  kubectl get namespace longhorn-system -o json > longhorn-ns.json
+  747  kubectl delete ns longhorn-system --force --grace-period=0\
+  748  kubectl delete ns longhorn-system --force --grace-period=0
+  749  kubectl get ns | grep longhorn
+  750  kubectl delete ns longhorn-system --force --grace-period=0 --wait=false
+  751  kubectl get ns | grep longhorn
+  752  kubectl delete ns longhorn-system --force --grace-period=0 --wait=false
+  753  kubectl patch ns longhorn-system -p '{"metadata":{"finalizers":null}}'
+  754  kubectl delete ns longhorn-system
+  755  kubectl get all -A | grep longhorn
+  756  kubectl delete all --all -n longhorn-system --force --grace-period=0
+  757  helmfile apply
+  758  kubectl get pod -A
+  759  kubectl get namespace longhorn-system -o json | jq '.spec.finalizers'
+  760  kubectl get ns | grep longhorn
+  761  ls
+  762  cd values/
+  763  ls
+  764  kubectl get pods -A | grep pihole
+  765  kubectl scale deployment -n <pihole-namespace> --replicas=0 <pihole-deployment-name>
+  766  kubectl get ns | grep pihole
+  767  sudo systemctl disable pihole-FTL
+  768  docker ps | grep pihole
+  769  podman ps | grep pihole
+  770  helfile destroy
+  771  helmfile destroy
+  772  cd ..
+  773  helmfile destroy
+  774  kubectl get pod -A
+  775  helmfile destroy
+  776  kubectl get pod -A
+  777  kubectl logs -n pihole-system pihole-7798cbd764-gsbnt
+  778  kubectl describe pod -n pihole-system pihole-7798cbd764-gsbnt
+  779  kubectl get deploy -n pihole-system
+  780  kubectl delete pod -n pihole-system --all
+  781  helmfile destroy
+  782  kubectl get pod -A
+  783  helmfile apply
+  784  kubectl get pod -A
+  785  helmfile destroy
+  786  helmfile apply
+  787  kubectl get pod -A\
+  788  kubectl get pod -A
+  789  kubectl get nodes -o wide
+  790  sudo systemctl restart kubelet
+  791  talosctl logs --namespace kubelet
+  792  kubectl get pods -n kube-system | grep cni
+  793  kubectl get pods -n kube-system | grep flannel
+  794  kubectl get pods -n kube-system | grep cni
+  795  kubectl delete pod -n kube-system --all
+  796  kubectl get pvc -A
+  797  kubectl get pv | grep pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  798  kubectl patch pvc pihole -n pihole-system -p '{"metadata":{"finalizers":null}}'
+  799  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  800  kubectl get pvc -A
+  801  kubectl patch pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -p '{"metadata":{"finalizers":null}}'
+  802  kubectl delete pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --force --grace-period=0
+  803  kubectl patch pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -p '{"metadata":{"finalizers":null}}'
+  804  kubectl delete volumes.longhorn.io pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -n longhorn-system --force --grace-period=0
+  805  helmfile apply
+  806  kubectl get pvc -A
+  807  kubectl delete volumes.longhorn.io pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -n longhorn-system --force --grace-period=0
+  808  kubectl patch pvc pihole -n pihole-system -p '{"metadata":{"finalizers":null}}'
+  809  kubectl delete -A ValidatingWebhookConfiguration longhorn-webhook
+  810  kubectl patch pvc pihole -n pihole-system -p '{"metadata":{"finalizers":null}}'
+  811  nano pihole-pvc.json
+  812  kubectl replace --raw "/api/v1/namespaces/pihole-system/persistentvolumeclaims/pihole/finalize" -f pihole-pvc.json
+  813  nano pihole-pvc.json
+  814  cat pihole-pvc.json 
+  815  kubectl replace --raw "/api/v1/namespaces/pihole-system/persistentvolumeclaims/pihole/finalize" -f pihole-pvc.json
+  816  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  817  kubectl get pod -A
+  818  kubectl get pvc -A
+  819  kubectl edit pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  820  kubectl get pvc pihole -n pihole-system -o json > pihole-pvc.json
+  821  nano pihole-pvc.json
+  822  vim pihole-pvc.json 
+  823  kubectl replace --raw "/api/v1/namespaces/pihole-system/persistentvolumeclaims/pihole/finalize" -f pihole-pvc.json
+  824  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  825  kubectl get pvc -A
+  826  talosctl service-restart --nodes <node-ip> kubelet
+  827  talosctl service-restart --nodes 192.168.5.10,192.168.5.11,192.168.5.12 -e 192.168.5.10 --talosconfig=../talosconfig kubelet
+  828  cd ..
+  829  talosctl service-restart --nodes 192.168.5.10,192.168.5.11,192.168.5.12 -e 192.168.5.10 --talosconfig=./talosconfig kubelet
+  830  kubectl get pvc -A
+  831  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  832  kubectl get pvc -A
+  833  kubectl patch pv <pv-name> --type merge -p '{"status":{"phase":"Failed"}}'
+  834  kubectl patch pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --type merge -p '{"status":{"phase":"Failed"}}'
+  835  kubectl get pvc pihole -n pihole-system -o jsonpath="{.metadata.finalizers}"
+  836  kubectl patch pvc pihole -n pihole-system -p '{"metadata":{"finalizers":null}}'
+  837  kubectl get pv | grep pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  838  .kubectl get pv | grep pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  839  kubectl get pv | grep pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  840  kubectl patch pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -p '{"metadata":{"finalizers":null}}'
+  841  kubectl delete pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --force --grace-period=0
+  842  kubectl get pvc -A
+  843  kubectl get pvc pihole -n pihole-system -o jsonpath="{.metadata.finalizers}"
+  844  kubectl get pvc pihole -n pihole-system -o json > pihole-pvc.json
+  845  vim pihole-pvc.json 
+  846  kubectl replace --raw "/api/v1/namespaces/pihole-system/persistentvolumeclaims/pihole/finalize" -f pihole-pvc.json
+  847  kubectl patch pvc pihole -n pihole-system --type merge -p '{"metadata":{"finalizers":null}}'
+  848  kubectl edit pvc pihole -n pihole-system
+  849  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  850  kubectl edit pvc pihole -n pihole-system
+  851  talosctl etcdctl get /registry/persistentvolumeclaims/pihole-system/pihole --endpoints=192.168.5.10:2379
+  852  talosctl etcd get /registry --nodes 192.168.5.10
+  853  talosctl etcd get /registry --nodes 192.168.5.10 -e 192.168.5.10 --talosconfig=./talosconfig
+  854  kubectl patch pvc pihole -n pihole-system --type merge -p '{"metadata":{"finalizers":null}}'
+  855  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  856  talosctl debug --nodes 192.168.5.10
+  857  talosctl debug --nodes 192.168.5.10 -e 192.168.5.10 --talosconfig=./talosconfig
+  858  talosctl --help
+  859  ls
+  860  rm pihole-pvc.json 
+  861  vim pihole.pvc.yaml
+  862  ls
+  863  kubectl get pvc -A
+  864  kubectl get pvc -n pihole-system
+  865  kubectl get pv -n pihole-system
+  866  kubectl patch pvc sample-app-pvc -p '{"metadata":{"finalizers":null}}' -n pihole-system
+  867  kubectl patch pvc pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -p '{"metadata":{"finalizers":null}}' -n pihole-system
+  868  kubectl delete pvc pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -n pihole-system
+  869  kubectl get pvc pihole -n pihole-system -o yaml
+  870  kubectl patch pvc pihole -n pihole-system --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  871  kubectl -n longhorn-system edit deployment longhorn-manager
+  872  kubectl patch pvc pihole -n pihole-system --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  873  kubectl -n longhorn-system get volumes
+  874  kubectl -n longhorn-system delete volume pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  875  kubectl -n longhorn-system get svc
+  876  kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
+  877  kubectl -n longhorn-system get svc longhorn-frontend
+  878  kubectl -n longhorn-system get pods
+  879  kubectl -n longhorn-system get svc
+  880  cd helm/
+  881  helmfile apply
+  882  kubectl get pod -A
+  883  kubectl -n longhorn-system get volumes
+  884  kubectl -n longhorn-system delete volume --all --force --grace-period=0
+  885  kubectl -n longhorn-system patch volume pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  886  kubectl -n longhorn-system edit deployment longhorn-manager
+  887  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  888  kubectl delete pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --force --grace-period=0
+  889  kubectl delete namespace longhorn-system --force --grace-period=0
+  890  kubectl get pod -A
+  891  helmfile destroy
+  892  kubectl get pvc -A | grep Terminating
+  893  kubectl get pvc pihole -n pihole-system -o json | jq '.metadata.finalizers'
+  894  apt install jq
+  895  kubectl get pvc pihole -n pihole-system -o json | jq '.metadata.finalizers'
+  896  kubectl get pvc pihole -n pihole-system -o json | jq 'del(.metadata.finalizers)' | kubectl replace --raw "/api/v1/namespaces/pihole-system/persistentvolumeclaims/pihole/finalize" -f -
+  897  kubectl get pvc -A | grep pihole
+  898  kubectl get pvc -n pihole-system
+  899  etcdctl get /registry/persistentvolumeclaims/pihole-system/pihole --prefix
+  900  apt install etcd-client
+  901  etcdctl get /registry/persistentvolumeclaims/pihole-system/pihole --prefix
+  902  kubectl patch pvc pihole -n pihole-system --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  903  kubectl patch pv pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  904  talosctl get nodes
+  905  talosctl get nodes -e 192.168.5.10 -n 192.168.5.10 --talosconfig=./talosconfig
+  906  cd ..
+  907  cd phongcluster/
+  908  talosctl get nodes -e 192.168.5.10 -n 192.168.5.10 --talosconfig=./talosconfig
+  909  ls
+  910  talosctl get nodes -e 192.168.5.10 -n 192.168.5.10 --talosconfig=./talosconfig
+  911  talosctl get nodes
+  912  talosctl get nodes -e 192.168.5.10
+  913  talosctl get nodes -e 192.168.5.10 --talosconfig=./talosconfig
+  914  talosctl get -n 192.168.5.10  -e 192.168.5.10 --talosconfig=./talosconfig
+  915  talosctl -n 192.168.5.10 service restart etcd --talosconfig=./talosconfig
+  916  talosctl -n 192.168.5.10 -e 192.168.5.10 service restart etcd --talosconfig=./talosconfig
+  917  kubectl get pvc -A
+  918  talosctl -n 192.168.5.10 etcdctl get /registry/persistentvolumeclaims/pihole-system/pihole --prefix --keys-only
+  919  talosctl -n 192.168.5.10 service restart kubelet
+  920  talosctl -n 192.168.5.10 -e 192.168.5.10 service restart kubelet
+  921  talosctl -n 192.168.5.10 -e 192.168.5.10 --talosconfig=./talosconfig service restart kubelet
+  922  talosctl -n 192.168.5.10 service restart control-plane
+  923  talosctl --help
+  924  talosctl service kubelet restart
+  925  talosctl service kubelet restart -e 192.168.5.10
+  926  talosctl service kubelet restart -e 192.168.5.10 --talosconfig=./talosconfig
+  927  talosctl service restart -e 192.168.5.10 --talosconfig=./talosconfig
+  928  talosctl service --help
+  929  kubectl get pvc --all-namespaces | grep Terminating
+  930  kubectl get pv | grep Terminating
+  931  kubectl get pv
+  932  kubectl patch pvc pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 -n pihole-system -p '{"metadata":{"finalizers":[]}}' --type=merge
+  933  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 --endpoints 192.168.5.10 service restart kubelet
+  934  kubectl get volumeattachment
+  935  kubectl patch volumeattachment csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9   --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  936  kubectl delete volumeattachment csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9 --force --grace-period=0
+  937  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  938  kubectl get volumeattachment -o json | jq '.items[] | select(.metadata.name=="csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9")'
+  939  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10  get nodes
+  940  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 get nodes
+  941  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 get nodes
+  942  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 etcdctl del /registry/storage.k8s.io/volumeattachments/csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9
+  943  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 --endpoints 192.168.5.10 version
+  944  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 get machine
+  945  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 get machine
+  946  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 etcd get /registry/storage.k8s.io/volumeattachments --prefix --keys-only
+  947  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 version
+  948  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 --endpoints 192.168.5.10 version
+  949  kubectl get pod -A
+  950  kubectl delete volumeattachment csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9 --force --grace-period=0
+  951  kubectl get volumeattachment -o json | jq '.items[] | select(.metadata.name=="csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9")'
+  952  kubectl patch volumeattachment csi-f3369b7b67f64d9c5cc7ac9ea87762616de082d146796503ec8b87fafd312bd9   --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  953  kubectl get volumeattachment
+  954  kubectl get pv
+  955  kubectl get pvc
+  956  kubectl get pvc -A
+  957  kubectl get pv -A
+  958  kubectl patch pvc pihole -n pihole-system --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  959  kubectl get pvc pihole -n pihole-system -o json | jq '.metadata.finalizers'
+  960  kubectl patch pvc pihole -n pihole-system --type=json -p '[{"op": "remove", "path": "/metadata/finalizers"}]'
+  961  kubectl delete validatingwebhookconfiguration longhorn-admission-webhook
+  962  kubectl get validatingwebhookconfiguration
+  963  kubectl get mutatingwebhookconfiguration
+  964  kubectl delete validatingwebhookconfiguration longhorn-admission-webhook --ignore-not-found=true
+  965  kubectl delete mutatingwebhookconfiguration longhorn-admission-webhook --ignore-not-found=true
+  966  kubectl get pvc pihole -n pihole-system -o yaml > pvc.yaml
+  967  vim pvc.yaml 
+  968  kubectl replace -f pvc.yaml --force
+  969  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 etcd get /registry/persistentvolumeclaims/pihole-system/pihole --prefix --keys-only
+  970  kubectl get pvc -A
+  971  kubectl get pv
+  972  kubectl get volumeattachment
+  973  kubectl get volumeattachment -A
+  974  kubectl get validatingwebhookconfiguration
+  975  kubectl delete validatingwebhookconfiguration longhorn-admission-webhook --ignore-not-found=true
+  976  kubectl delete mutatingwebhookconfiguration longhorn-admission-webhook --ignore-not-found=true
+  977  kubectl get validatingwebhookconfiguration
+  978  kubectl delete validatingwebhookconfiguration longhorn-webhook-validator
+  979  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  980  kubectl get validatingwebhookconfiguration
+  981  kubectl delete validatingwebhookconfiguration longhorn-webhook-validator
+  982  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  983  kubectl get pvc -A
+  984  kubectl get pv -A
+  985  kubectl delete pvc pihole -n pihole-system --force --grace-period=0
+  986  kubectl get pod -A
+  987  kubectl -n longhorn-system get volumes
+  988  kubectl -n longhorn-system delete volume pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  989  kubectl get pvc -A
+  990  kubectl get volumeattachment
+  991  kubectl -n longhorn-system get volumes
+  992  kubectl -n longhorn-system patch volume pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --type=merge -p '{"spec":{"disableFrontend": true}}'
+  993  kubectl -n longhorn-system delete volume pvc-5981754d-2f20-4b45-bbd0-168f22ef2597
+  994  kubectl -n longhorn-system patch volume pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --type=merge -p '{"metadata":{"finalizers":[]}}'
+  995  kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
+  996  kubectl -n longhorn-system rollout restart deployment longhorn-manager
+  997  kubectl -n longhorn-system delete pod -l longhorn.io/component=engine
+  998  kubectl -n longhorn-system get volumes
+  999  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 etcd get /registry/longhorn.io/volumes/pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --prefix --keys-only
+ 1000  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 etcd members /registry/longhorn.io/volumes/pvc-5981754d-2f20-4b45-bbd0-168f22ef2597 --prefix --keys-only
+ 1001  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 etcd members
+ 1002  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 etcd members
+ 1003  helm repo add longhorn https://charts.longhorn.io
+ 1004  helm repo update
+ 1005  helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace
+ 1006  kubectl get ns longhorn-system -o json | jq '.status'
+ 1007  kubectl get ns longhorn-system -o json > longhorn-namespace.json
+ 1008  vim longhorn-namespace.json 
+ 1009  kubectl replace --raw "/api/v1/namespaces/longhorn-system/finalize" -f longhorn-namespace.json
+ 1010  kubectl get ns longhorn-system
+ 1011  kubectl -n longhorn-system get volumes
+ 1012  kubectl get crds | grep longhorn
+ 1013  kubectl delete crd backuptargets.longhorn.io engineimages.longhorn.io engines.longhorn.io nodes.longhorn.io replicas.longhorn.io snapshots.longhorn.io volumeattachments.longhorn.io volumes.longhorn.io --force --grace-period=0
+ 1014  kubectl get crds | grep longhorn
+ 1015  kubectl get crd <crd-name> -o json > crd.json
+ 1016  kubectl get crd volumes.longhorn.io -o json > volumes.json
+ 1017  vim volumes.json 
+ 1018  kubectl replace --raw "/apis/apiextensions.k8s.io/v1/customresourcedefinitions/<crd-name>" -f <crd-file>
+ 1019  kubectl delete crd volumes.longhorn.io --force --grace-period=0
+ 1020  kubectl replace --raw "/apis/apiextensions.k8s.io/v1/customresourcedefinitions/<crd-name>" -f <crd-file>
+ 1021  kubectl get crd volumes.longhorn.io -o json > volumes.json
+ 1022  vim volumes.json 
+ 1023  kubectl replace --raw "/apis/apiextensions.k8s.io/v1/customresourcedefinitions/<crd-name>" -f <crd-file>
+ 1024  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 service restart kubelet
+ 1025  talosctl --talosconfig=./talosconfig --nodes 192.168.5.10 -e 192.168.5.10 service restart kubelet
+ 1026  kubectl get crds | grep longhorn
+ 1027  kubectl get pod -A
+ 1028  kubectl get all --all-namespaces | grep longhorn
+ 1029  kubectl delete all --all-namespaces -l longhorn.io --force --grace-period=0
+ 1030  kubectl get crds | grep longhorn
+ 1031  kubectl delete crd $(kubectl get crds | grep longhorn | awk '{print $1}') --force --grace-period=0
+ 1032  kubectl get crd volumes.longhorn.io -o json > volumes.json
+ 1033  ls
+ 1034  vim volumes.json 
+ 1035  kubectl replace --raw "/apis/apiextensions.k8s.io/v1/customresourcedefinitions/volumes.longhorn.io" -f volumes.json
+ 1036  kubectl get crd volumes.longhorn.io -o json > volumes-latest.json
+ 1037  vim volumes-latest.json 
+ 1038  kubectl replace --raw "/apis/apiextensions.k8s.io/v1/customresourcedefinitions/volumes.longhorn.io" -f volumes-latest.json
+ 1039  kubectl patch crd volumes.longhorn.io -p '{"metadata":{"finalizers":null}}' --type=merge
+ 1040  kubectl delete crd volumes.longhorn.io --force --grace-period=0
+ 1041  kubectl edit crd volumes.longhorn.io
+ 1042  kubectl delete crd volumes.longhorn.io --force --grace-period=0
+ 1043  kubectl get crds | grep longhorn
+ 1044  kubectl get crds | grep longhorn | awk '{print $1}' | xargs -I{} kubectl patch crd {} -p '{"metadata":{"finalizers":null}}' --type=merge
+ 1045  kubectl get crds | grep longhorn | awk '{print $1}' | xargs kubectl delete crd --force --grace-period=0
+ 1046  kubectl get crds | grep longhorn
+ 1047  kubectl get all --all-namespaces | grep longhorn
+ 1048  kubectl get configmaps --all-namespaces | grep longhorn
+ 1049  kubectl get secrets --all-namespaces | grep longhorn
+ 1050  kubectl get ns | grep longhorn
+ 1051  helmfile apply
+ 1052  cd helm/
+ 1053  cd ..
+ 1054  ls
+ 1055  rm pvc.yaml, volumes.json 
+ 1056  rm pvc.yaml
+ 1057  ls
+ 1058  rm longhorn-namespace.json 
+ 1059  rm volumes-latest.json 
+ 1060  cd helm/
+ 1061  helmfile apply
+ 1062  kubectl get pod -A
+ 1063  helmfile destroy
+ 1064  kubectl get pod -A
+ 1065  kubectl -n longhorn-system rollout restart deployment longhorn-ui
+ 1066  kubectl label --overwrite ns longhorn-system   pod-security.kubernetes.io/enforce=privileged   pod-security.kubernetes.io/audit=privileged   pod-security.kubernetes.io/warn=privileged
+ 1067  kubectl get pod -A
+ 1068  kubectl -n longhorn-system rollout restart deployment longhorn-ui
+ 1069  kubectl get pod -A
+ 1070  kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
+ 1071  kubectl get pod -A
+ 1072  kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
+ 1073  ls
+ 1074  rm longhorn-ns.json 
+ 1075  rm pihole-pvc.json 
+ 1076  ls
+ 1077  cd va
+ 1078  cd values/
+ 1079  ls
+ 1080  vim pihole.values.yaml 
+ 1081  cd ..
+ 1082  helmfile apply
+ 1083  kubectl get pod -A
+ 1084  ls
+ 1085  cd values/
+ 1086  ls
+ 1087  cat pihole.values.yaml 
+ 1088  d ..
+ 1089  cd ..
+ 1090  ls
+ 1091  cd ..
+ 1092  ls
+ 1093  cd kustomize/
+ 1094  ls
+ 1095  cd metallb/
+ 1096  cat pool.yaml 
+ 1097  cd ..
+ 1098  ls
+ 1099  k apply -k .
+ 1100  kubectl apply -k .
+ 1101  kubectl get svc -n pihole-system
+ 1102  kubectl get pod -A
+ 1103  kubectl describe pod pihole-7798cbd764-rpgfp -n pihole-system
+ 1104  kubectl get pvc -n pihole-system
+ 1105  kubectl describe pvc pihole -n pihole-system
+ 1106  kubectl get pvc -n pihole-system
+ 1107  kubectl -n longhorn-system get pods
+ 1108  kubectl -n longhorn-system rollout restart deployment longhorn-manager
+ 1109  kubectl -n longhorn-system get pods
+ 1110  cd ..
+ 1111  kubectl -n longhorn-system rollout restart deployment longhorn-manager
+ 1112  kubectl -n longhorn-system logs -l app=longhorn-manager --tail=50
+ 1113  kubectl -n longhorn-system get backuptargets.longhorn.io
+ 1114  kubectl -n longhorn-system
+ 1115  kubectl get -n longhorn-system
+ 1116  cd helm/
+ 1117  helmfile destroy
+ 1118  kubectl get pod -A
+ 1119  kubectl -n longhorn-system logs longhorn-uninstall-7lwr7
+ 1120  kubectl -n longhorn-system logs longhorn-uninstall-n2p8r
+ 1121  kubectl -n longhorn-system edit settings.longhorn.io deleting-confirmation-flag
+ 1122  kubectl -n longhorn-system delete pod -l app=longhorn-uninstall
+ 1123  kubectl -n longhorn-system get pods
+ 1124  helmfile apply
+ 1125  kubectl get pod -A
+ 1126  kubectl describe pod pihole-7798cbd764-mwcms -n pihole-system
+ 1127  kubectl get pod -A
+ 1128  kubectl get pvc -n pihole-system
+ 1129  kubectl -n longhorn-system rollout restart deployment longhorn-manager
+ 1130  kubectl -n longhorn-system rollout restart deployment longhorn-ui
+ 1131  kubectl get pod -A
+ 1132  kubectl -n longhorn-system rollout restart deployment longhorn-manager
+ 1133  kubectl get pod -A
+ 1134  kubectl describe pod pihole-7798cbd764-mwcms -n pihole-system
+ 1135  kubectl get pvc -n pihole-system
+ 1136  kubectl get lv -n longhorn-system
+ 1137  kubectl get ns
+ 1138  kubectl create ns pihole-system
+ 1139  kubectl describe nodes | grep -i taint
+ 1140  kubectl get pdb -A
+ 1141  kubectl get pods -n longhorn-system
+ 1142  kubectl get storageclass
+ 1143  kubectl get volumes -n longhorn-system
+ 1144  kubectl get nodes -o wide
+ 1145  kubectl delete pod -n longhorn-system --all
+ 1146  kubectl get pods -A
+ 1147  kubectl describe pod pihole-7798cbd764-mwcms -n pihole-system
+ 1148  kubectl get pods -A
+ 1149  kubectl get svc -n pihole-system
+ 1150  cd ..
+ 1151  cd kustomize/
+ 1152  kubectl apply k .
+ 1153  kubectl apply -k .
+ 1154  kubectl get svc -n pihole-system
+ 1155  kubectl get volumes -n longhorn-system
+ 1156  kubectl get replicas -n longhorn-system
+ 1157  kubectl get volumes -n longhorn-system
+ 1158  cd ..
+ 1159  ls
+ 1160  cd helm/
+ 1161  cd values/
+ 1162  ls
+ 1163  vim pihole.values.yaml 
+ 1164  cd ..
+ 1165  helmfile apply
+ 1166  kubectl get pod -A
+ 1167  ping 192.168.5.250
+ 1168  kubectl get svc -n pihole-system
+ 1169  ping 192.168.5.250
+ 1170  kubectl get pod -A
+ 1171  ls
+ 1172  cd values/
+ 1173  vim pihole.values.yaml 
+ 1174  nmcli
+ 1175  apt install network-manager
+ 1176  nmcli
+ 1177  nmcli con
+ 1178  ls
+ 1179  cat pihole.values.yaml 
+ 1180  cd ..
+ 1181  cat helmfile.yaml 
+ 1182  vim helmfile.yaml 
+ 1183  cd values/
+ 1184  vim pihole.values.yaml 
+ 1185  cd ..
+ 1186  vim helmfile.yaml 
+ 1187  cd va
+ 1188  nhole. cd vanhole. 
+ 1189  ls
+ 1190  ls -ll
+ 1191  ls -a
+ 1192  ls
+ 1193  cd values/
+ 1194  ls
+ 1195  vim pihole.values.yaml 
+ 1196  cd ..
+ 1197  lsl
+ 1198  ls
+ 1199  vim helmfile.yaml 
+ 1200  cat /etc/vim/vimrc
+ 1201  cat ~/.vimrc
+ 1202  vim ~/.vimrc
+ 1203  vim helmfile.yaml 
+ 1204  vim ~/.vimrc
+ 1205  vim helmfile.yaml 
+ 1206  vim ~/.vimrc
+ 1207  :source ~/.vimrc
+ 1208  vim helmfile.yaml 
+ 1209  vim ~/.vimrc
+ 1210  vim helmfile.yaml 
+ 1211  vim ~/.vimrc
+ 1212  vim helmfile.yaml 
+ 1213  cd ..
+ 1214  history > history.txt
