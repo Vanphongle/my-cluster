@@ -1,0 +1,10 @@
+# Ignore Talos and Kubernetes config files
+worker.yaml
+controlplane.yaml
+kubeconfig
+talosconfig
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
