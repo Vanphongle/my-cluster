@@ -1,0 +1,10 @@
+longhornUI:
+  replicas: 1
+
+ingress:
+  enabled: true
+  host: "longhorn.home"
+
+service:
+  ui:
+    type: LoadBalancer
