@@ -64,4 +64,4 @@ releases:
     version: v1.17.0
     # Install CRDs if they are not already installed
     values:
-      - installCRDs: true
+      - crds: enabled
