@@ -17,7 +17,6 @@ This is my hands-on journey toward **DevOps**, automation, and managing my own i
 
 ## 🔮 **Future Plans & Goals**  
 I plan to expand my cluster with:  
-🔹 **Ingress NGINX** for better traffic management 🚦  
 🔹 **Home Assistant** for smart home automation 🏡  
 🔹 **GitOps (FluxCD or ArgoCD)** for automated deployments ⚙️  
 🔹 **Ceph storage (maybe later)** when I have more disks to test large-scale storage 🏗️  
