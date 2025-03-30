@@ -14,9 +14,9 @@ homepage:
   # Bookmarks for external links (social links)
   bookmarksYaml: |
     - Developer:
-          - Github:
+          - Cluster Github Repository:
               - abbr: GH
-                href: https://github.com/
+                href: https://github.com/Vanphongle/my-cluster
   # Services displayed on your dashboard
   servicesYaml: |
     - My Internal Services:
