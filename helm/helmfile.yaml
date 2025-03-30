@@ -9,6 +9,8 @@ repositories:
     url: https://kubernetes.github.io/ingress-nginx
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
+  - name: jetstack
+    url: https://charts.jetstack.io
 
 releases:
   #Distributed storage
@@ -48,3 +50,18 @@ releases:
     version: 8.7.6
     values:
       - ./values/externaldns.values.yaml
+     
+  # Homepage Dashboard
+  - name: homepage
+    namespace: homepage-system
+    chart: ./charts/homepage
+    values:
+      - ./values/homepage.values.yaml
+
+  - name: cert-manager
+    namespace: cert-manager
+    chart: jetstack/cert-manager
+    version: v1.17.0
+    # Install CRDs if they are not already installed
+    values:
+      - installCRDs: true

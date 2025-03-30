@@ -8,3 +8,5 @@ talosconfig
 *.log
 *.tmp
 
+# Ignore auth file
+helm/values/auth

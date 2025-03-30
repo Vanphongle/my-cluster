@@ -4,6 +4,10 @@ longhornUI:
 ingress:
   enabled: true
   host: "longhorn.home"
+  annotations:
+    nginx.ingress.kubernetes.io/auth-type: "basic"
+    nginx.ingress.kubernetes.io/auth-secret: "longhorn-ui-basic-auth"
+    nginx.ingress.kubernetes.io/auth-realm: "Longhorn UI Authentication Required"
 
 service:
   ui:

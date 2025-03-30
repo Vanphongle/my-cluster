@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  namespace: homepage-system
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  kubernetes.yaml: |-
+{{ .Values.homepage.kubernetesYaml | default "mode: cluster" | nindent 4 }}
+  settings.yaml: |-
+{{ .Values.homepage.settingsYaml | default "" | nindent 4 }}
+  custom.css: |-
+{{ .Values.homepage.customCss | default "" | nindent 4 }}
+  custom.js: |-
+{{ .Values.homepage.customJs | default "" | nindent 4 }}
+  bookmarks.yaml: |-
+{{ .Values.homepage.bookmarksYaml | default "- Developer:\n    - Github:\n        - abbr: GH\n          href: https://github.com/" | nindent 4 }}
+  services.yaml: |-
+{{ .Values.homepage.servicesYaml | default "- My First Group:\n    - My First Service:\n        href: http://localhost/\n        description: Homepage is awesome\n\n- My Second Group:\n    - My Second Service:\n        href: http://localhost/\n        description: Homepage is the best\n\n- My Third Group:\n    - My Third Service:\n        href: http://localhost/\n        description: Homepage is working" | nindent 4 }}
+  widgets.yaml: |-
+{{ .Values.homepage.widgetsYaml | default "- kubernetes:\n    cluster:\n      show: true\n      cpu: true\n      memory: true\n      showLabel: true\n      label: \"cluster\"\n    nodes:\n      show: true\n      cpu: true\n      memory: true\n      showLabel: true\n- resources:\n    backend: resources\n    expanded: true\n    cpu: true\n    memory: true\n    network: default\n- search:\n    provider: duckduckgo\n    target: _blank" | nindent 4 }}
+  docker.yaml: |-
+{{ .Values.homepage.dockerYaml | default "" | nindent 4 }}

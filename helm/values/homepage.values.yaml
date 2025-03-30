@@ -1,0 +1,36 @@
+replicaCount: 1
+
+serviceAccount:
+  name: homepage
+
+env:
+  HOMEPAGE_ALLOWED_HOSTS: "gethomepage.dev,homepage.home"
+
+homepage:
+  kubernetesYaml: "mode: cluster"
+  settingsYaml: ""
+  customCss: ""
+  customJs: ""
+  # Bookmarks for external links (social links)
+  bookmarksYaml: |
+    - Developer:
+          - Github:
+              - abbr: GH
+                href: https://github.com/
+  # Services displayed on your dashboard
+  servicesYaml: |
+    - My Internal Services:
+        - Pi-hole:
+            href: "http://pihole.home/admin"
+            description: "Pi-hole Dashboard"
+        - Longhorn:
+            href: "http://longhorn.home"
+            description: "Longhorn UI"
+    - My External Services:
+        - Website:
+            href: "http://www.vanphongle.com"
+            description: "My Personal Website"
+    - Social:
+        - LinkedIn:
+            href: "https://www.linkedin.com/in/van-p-le"
+            description: "My LinkedIn Profile"
