@@ -21,14 +21,14 @@ homepage:
   servicesYaml: |
     - My Internal Services:
         - Pi-hole:
-            href: "http://pihole.home/admin"
+            href: "https://pihole.home/admin"
             description: "Pi-hole Dashboard"
         - Longhorn:
-            href: "http://longhorn.home"
+            href: "https://longhorn.home"
             description: "Longhorn UI"
     - My External Services:
         - Website:
-            href: "http://www.vanphongle.com"
+            href: "https://www.vanphongle.com"
             description: "My Personal Website"
     - Social:
         - LinkedIn:

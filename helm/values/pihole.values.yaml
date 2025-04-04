@@ -7,6 +7,14 @@ ingress:
   enabled: true
   hosts:
     - "pihole.home"
+
+env:
+  - name: WEBPASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: pihole-password
+        key: WEBPASSWORD
+
 serviceWeb:
   loadBalancerIP: 192.168.5.250
   annotations:

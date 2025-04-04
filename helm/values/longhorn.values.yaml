@@ -8,6 +8,8 @@ ingress:
     nginx.ingress.kubernetes.io/auth-type: "basic"
     nginx.ingress.kubernetes.io/auth-secret: "longhorn-ui-basic-auth"
     nginx.ingress.kubernetes.io/auth-realm: "Longhorn UI Authentication Required"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 
 service:
   ui:
